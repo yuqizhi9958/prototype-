@@ -30,6 +30,10 @@
 
     p1.toString() //p1 对象本身没有这个方法，自己的构造函数也没有，就往上找，如果在原型链尽头还没找到就会报错或者undefined
     console.log(p1.__proto__.__proto__ === Object.prototype);
+
+    // 万物皆对象。 原型链的顶端是null
+    console.log(p1.__proto__.__proto__.__proto__); //null
+    console.log(p1.__proto__.__proto__.__proto__ === null);
     
 
 
