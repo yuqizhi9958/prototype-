@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var Person = function(name) {
+        this.name = name,
+        this.sayHi = function(){
+            console.log('你好') 
+        }
+    }
+    Person.prototype.eat = function () {
+        console.log('吃东西。。。')
+    }
+    Person.prototype.type = '人类'
+    let p1 = new Person('张三')
+    console.log(p1.name)
+    p1.sayHi()
+    console.log(p1.type);
+    p1.eat()
+    
+    // p1.play()  //报错
+    console.log(p1.age)  //undefined
+
+    p1.toString() //p1 对象本身没有这个方法，自己的构造函数也没有，就往上找，如果在原型链尽头还没找到就会报错或者undefined
+    console.log(p1.__proto__.__proto__ === Object.prototype);
+    
+
+
+</script>
+</html>
